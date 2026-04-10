@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B站字幕下载器 - 油猴脚本版</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: linear-gradient(135deg, #0d1117, #161b22); min-height: 100vh; color: #c9d1d9; padding: 40px 20px; }
+        .container { max-width: 600px; margin: 0 auto; }
+        h1 { text-align: center; font-size: 2em; margin-bottom: 10px; background: linear-gradient(90deg, #00d4ff, #ff6b9d); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .subtitle { text-align: center; color: #888; margin-bottom: 30px; }
+        .card { background: rgba(255,255,255,0.05); border-radius: 16px; padding: 24px; margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.1); }
+        .step { display: flex; gap: 15px; margin-bottom: 16px; align-items: flex-start; }
+        .step-num { background: linear-gradient(135deg, #00d4ff, #0099cc); color: #fff; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0; }
+        .step-content h3 { font-size: 1em; margin-bottom: 4px; }
+        .step-content p { font-size: 0.9em; color: #888; }
+        code { background: rgba(0,212,255,0.1); padding: 2px 8px; border-radius: 4px; font-size: 0.85em; color: #00d4ff; }
+        .install-btn { display: block; background: linear-gradient(135deg, #ff6b9d, #c44569); color: #fff; text-align: center; padding: 16px 24px; border-radius: 12px; text-decoration: none; font-weight: bold; font-size: 1.1em; margin: 20px 0; transition: transform 0.2s; }
+        .install-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(255,107,157,0.3); }
+        .browser-list { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+        .browser-tag { background: rgba(0,212,255,0.1); border: 1px solid rgba(0,212,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 0.85em; color: #00d4ff; }
+        .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .feature { background: rgba(0,0,0,0.2); padding: 12px; border-radius: 8px; text-align: center; }
+        .feature-icon { font-size: 1.5em; margin-bottom: 5px; }
+        .feature-text { font-size: 0.85em; color: #888; }
+        .compare { margin-top: 20px; }
+        .compare-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .compare-label { color: #888; font-size: 0.9em; }
+        .compare-val { font-weight: bold; }
+        .val-good { color: #00ff88; }
+        .val-bad { color: #ff6b9d; }
+        .note { background: rgba(255,107,157,0.1); border: 1px solid rgba(255,107,157,0.2); border-radius: 8px; padding: 12px; margin-top: 15px; font-size: 0.9em; color: #ff6b9d; }
+        .how-to { margin-top: 15px; }
+        .how-to li { margin-bottom: 8px; color: #888; font-size: 0.9em; }
+        .screenshot { width: 100%; border-radius: 8px; margin: 15px 0; border: 1px solid rgba(255,255,255,0.1); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎬 B站字幕下载器</h1>
+        <p class="subtitle">油猴脚本版 · 支持豆包/Chrome/Edge等所有浏览器</p>
+
+        <div class="card">
+            <h2 style="margin-bottom:15px;">✅ 安装步骤（3步，永久使用）</h2>
+            
+            <div class="step">
+                <div class="step-num">1</div>
+                <div class="step-content">
+                    <h3>安装油猴插件</h3>
+                    <p>Chrome: 打开 <code>chrome://extensions/</code> 搜索"Tampermonkey"<br>豆包: 打开 <code>doubao://extensions/</code> 或应用商店搜索</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-num">2</div>
+                <div class="step-content">
+                    <h3>点击安装脚本</h3>
+                    <p>点击下方红色按钮，自动跳转到油猴安装页面</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-num">3</div>
+                <div class="step-content">
+                    <h3>打开B站视频即可</h3>
+                    <p>安装后访问任意B站视频，页面右上角会出现下载面板</p>
+                </div>
+            </div>
+
+            <a class="install-btn" href="bilibili-subtitle.user.js">▶️ 点击安装脚本</a>
+
+            <div class="browser-list">
+                <span class="browser-tag">✓ Chrome</span>
+                <span class="browser-tag">✓ Edge</span>
+                <span class="browser-tag">✓ 豆包</span>
+                <span class="browser-tag">✓ 360</span>
+                <span class="browser-tag">✓ 迅雷</span>
+                <span class="browser-tag">✓ 更多Chromium内核</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 style="margin-bottom:15px;">✨ 功能特性</h2>
+            <div class="feature-grid">
+                <div class="feature">
+                    <div class="feature-icon">🔍</div>
+                    <div class="feature-text">自动扫描字幕</div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">⬇️</div>
+                    <div class="feature-text">SRT字幕下载</div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📄</div>
+                    <div class="feature-text">JSON格式导出</div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🌐</div>
+                    <div class="feature-text">全浏览器通用</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 style="margin-bottom:15px;">📋 使用方法</h2>
+            <ol class="how-to">
+                <li>打开任意B站视频页面</li>
+                <li>等待页面右上角出现「B站字幕下载」面板</li>
+                <li>点击 <code>🔍 获取字幕</code> 按钮</li>
+                <li>字幕加载成功后，点击 <code>⬇️ 下载SRT</code></li>
+            </ol>
+            <div class="note">
+                💡 如果视频本身没有字幕，按钮会显示「未找到字幕」，这不是工具问题
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 style="margin-bottom:15px;">🔧 技术方案对比</h2>
+            <div class="compare">
+                <div class="compare-item">
+                    <span class="compare-label">Chrome扩展</span>
+                    <span class="compare-val val-bad">需手动加载 · 不支持豆包</span>
+                </div>
+                <div class="compare-item">
+                    <span class="compare-label">油猴脚本</span>
+                    <span class="compare-val val-good">✓ 豆包/Chrome/Edge通用</span>
+                </div>
+                <div class="compare-item">
+                    <span class="compare-label">手动抓包</span>
+                    <span class="compare-val val-good">100%有效 · 但步骤繁琐</span>
+                </div>
+                <div class="compare-item">
+                    <span class="compare-label">Playwright自动化</span>
+                    <span class="compare-val val-bad">被B站检测 · 不稳定</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 style="margin-bottom:10px;">⚠️ 注意事项</h2>
+            <p style="font-size:0.9em;color:#888;line-height:1.7;">
+                1. 字幕是B站AI自动生成的，并非所有视频都有字幕<br>
+                2. 部分新上传视频的字幕生成需要等待一段时间<br>
+                3. 如果提示"未找到字幕"，说明该视频暂时没有AI字幕<br>
+                4. 脚本完全本地运行，不会上传任何数据
+            </p>
+        </div>
+    </div>
+</body>
+</html>
