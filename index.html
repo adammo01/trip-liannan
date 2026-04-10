@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>清远连南三江镇行程方案</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); min-height: 100vh; color: #fff; }
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        h1 { text-align: center; font-size: 2.2em; margin-bottom: 10px; background: linear-gradient(90deg, #00d4ff, #7b2ff7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .subtitle { text-align: center; color: #888; margin-bottom: 40px; font-size: 1.1em; }
+        .card { background: rgba(255,255,255,0.05); border-radius: 20px; padding: 30px; margin-bottom: 25px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); transition: transform 0.3s; }
+        .card:hover { transform: translateY(-3px); }
+        .card h2 { font-size: 1.4em; margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
+        .card h2 .icon { font-size: 1.5em; }
+        .card h2 .title { color: #fff; }
+        .route-info { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; text-align: center; margin-top: 20px; }
+        .route-box { background: rgba(0,212,255,0.1); border-radius: 15px; padding: 20px; }
+        .route-box .big { font-size: 2em; font-weight: bold; color: #00d4ff; }
+        .route-box .label { color: #888; margin-top: 5px; font-size: 0.9em; }
+        .weather-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .weather-card { background: rgba(255,255,255,0.03); border-radius: 15px; padding: 25px; text-align: center; }
+        .weather-card .date { font-size: 0.85em; color: #888; margin-bottom: 5px; }
+        .weather-card .day { font-size: 1.5em; color: #fff; margin-bottom: 10px; }
+        .weather-card .temp { font-size: 2.5em; font-weight: bold; background: linear-gradient(90deg, #ff6b6b, #ffd93d); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .weather-card .condition { font-size: 1.1em; margin-top: 8px; }
+        .weather-card .wind { font-size: 0.85em; color: #888; margin-top: 5px; }
+        .timeline { position: relative; padding-left: 30px; }
+        .timeline::before { content: ''; position: absolute; left: 10px; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, #00d4ff, #7b2ff7); }
+        .timeline-item { position: relative; margin-bottom: 25px; padding: 20px; background: rgba(255,255,255,0.03); border-radius: 12px; }
+        .timeline-item::before { content: ''; position: absolute; left: -25px; top: 25px; width: 12px; height: 12px; border-radius: 50%; background: #00d4ff; box-shadow: 0 0 15px #00d4ff; }
+        .timeline-item .time { font-size: 0.85em; color: #00d4ff; font-weight: bold; margin-bottom: 8px; }
+        .timeline-item .title { font-size: 1.1em; font-weight: bold; margin-bottom: 5px; }
+        .timeline-item .desc { color: #aaa; font-size: 0.9em; line-height: 1.6; }
+        .tips { display: flex; flex-wrap: wrap; gap: 12px; }
+        .tip { background: rgba(123,47,247,0.2); padding: 10px 18px; border-radius: 25px; font-size: 0.9em; border: 1px solid rgba(123,47,247,0.3); }
+        .footer { text-align: center; margin-top: 40px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.85em; }
+        @media (max-width: 600px) {
+            .weather-grid, .route-info { grid-template-columns: 1fr; }
+            h1 { font-size: 1.6em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚗 清远连南三江镇行程方案</h1>
+        <p class="subtitle">📅 2026年4月11日（周六）出发 | 周日（4月12日）晚返程</p>
+
+        <!-- 路线概览 -->
+        <div class="card">
+            <h2><span class="icon">🛣️</span><span class="title">路线概览</span></h2>
+            <div class="route-info">
+                <div class="route-box">
+                    <div class="big">229.8</div>
+                    <div class="label">公里</div>
+                </div>
+                <div class="route-box">
+                    <div class="big">3h24m</div>
+                    <div class="label">预计时长</div>
+                </div>
+                <div class="route-box">
+                    <div class="big">🚙</div>
+                    <div class="label">自驾出行</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 天气预报 -->
+        <div class="card">
+            <h2><span class="icon">🌤️</span><span class="title">天气预报</span></h2>
+            <div class="weather-grid">
+                <div class="weather-card">
+                    <div class="date">4月11日 周六</div>
+                    <div class="day">广州 → 三江镇</div>
+                    <div class="temp">29°C</div>
+                    <div class="condition">☁️ 多云</div>
+                    <div class="wind">南风 ≤3级</div>
+                </div>
+                <div class="weather-card">
+                    <div class="date">4月12日 周日</div>
+                    <div class="day">三江镇返程</div>
+                    <div class="temp">--°C</div>
+                    <div class="condition">⚠️ 请出发前查看</div>
+                    <div class="wind">建议携带雨具</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 详细行程 -->
+        <div class="card">
+            <h2><span class="icon">📅</span><span class="title">详细行程</span></h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="time">09:00 - 10:00</div>
+                    <div class="title">🛫 番禺区出发 → 白云机场</div>
+                    <div class="desc">从番禺区出发，预计1小时到达广州白云机场（机场距番禺约40公里）</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="time">10:00</div>
+                    <div class="title">✈️ 抵达白云机场，接人</div>
+                    <div class="desc">接机时间，建议提前15分钟到达。T1航站楼到达大厅</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="time">10:00 - 13:30</div>
+                    <div class="title">🚗 白云机场 → 三江镇</div>
+                    <div class="desc">自驾路线：广州白云机场 → 机场高速 → 大广高速 → 乐广高速 → 二广高速 → 连南出口 → 三江镇。全程约3小时30分钟，229.8公里</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="time">13:30</div>
+                    <div class="title">🏠 抵达三江镇</div>
+                    <div class="desc">办理入住，休整用午餐。建议品尝当地特色美食：连南土猪肉、瑶家竹筒饭、山水豆腐</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="time">15:00 - 18:00</div>
+                    <div class="title">🏞️ 三江镇周边游玩</div>
+                    <div class="desc">推荐：千年瑶寨（距镇区约30分钟车程）、瑶族博物馆、三江交汇处风光带</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="time">18:00 - 21:00</div>
+                    <div class="title">🍜 晚餐 & 休息</div>
+                    <div class="desc">推荐餐厅：瑶家竹筒饭旗舰店、连南食为先农家乐</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 实用贴士 -->
+        <div class="card">
+            <h2><span class="icon">💡</span><span class="title">实用贴士</span></h2>
+            <div class="tips">
+                <span class="tip">🛣️ 高速收费约¥120-150</span>
+                <span class="tip">⛽ 建议出发前加满油</span>
+                <span class="tip">🍜 瑶家美食需提前预约</span>
+                <span class="tip">📱 高德地图离线地图备用</span>
+                <span class="tip">👔 三江镇昼夜温差大，带外套</span>
+                <span class="tip">☂️ 周日天气不确定，建议带伞</span>
+                <span class="tip">🅿️ 镇区停车方便</span>
+                <span class="tip">📸 千年瑶寨门票约¥80</span>
+            </div>
+        </div>
+
+        <!-- 紧急联系人 -->
+        <div class="card">
+            <h2><span class="icon">📞</span><span class="title">紧急联系</span></h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                <div style="padding: 15px; background: rgba(0,0,0,0.2); border-radius: 10px;">
+                    <div style="color: #888; font-size: 0.85em;">连南县气象局</div>
+                    <div style="font-size: 1.1em; margin-top: 5px;">0763-8661234</div>
+                </div>
+                <div style="padding: 15px; background: rgba(0,0,0,0.2); border-radius: 10px;">
+                    <div style="color: #888; font-size: 0.85em;">连南旅游局</div>
+                    <div style="font-size: 1.1em; margin-top: 5px;">0763-8661889</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>📅 行程生成时间：2026年4月10日</p>
+            <p>🌐 Powered by 高德地图 MCP + OpenClaw AI太子</p>
+            <p style="margin-top: 10px;">⚠️ 天气数据仅供参考，请以实际为准</p>
+        </div>
+    </div>
+</body>
+</html>
